@@ -1,0 +1,113 @@
+commit 23d13d11cde38154d89dffccb3b1ebe05a35947c
+Author: Kilpikonna02 <eetu.kilpi@outlook.com>
+Date:   Mon Mar 13 18:14:12 2023 +0200
+
+    muutokset
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 0429dc511757002633a19234be08923d512c7639
+Author: Kilpikonna02 <eetu.kilpi@outlook.com>
+Date:   Mon Mar 13 18:10:30 2023 +0200
+
+    tiedostoja kansio
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 9036f5e632dd29fb40b3f89b40c0d62f2a42bab9
+Author: Kilpikonna02 <eetu.kilpi@outlook.com>
+Date:   Mon Mar 13 18:04:04 2023 +0200
+
+    muutokset
+
+ eka.txt    | 7 ++-----
+ kolmas.txt | 2 +-
+ 2 files changed, 3 insertions(+), 6 deletions(-)
+
+commit a21d7f88ce0550b31224ebdf9e967bf2a610386b
+Author: Kilpikonna02 <eetu.kilpi@outlook.com>
+Date:   Mon Mar 13 18:02:09 2023 +0200
+
+    nimen muutos
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit f00c0e2862a32b1a6da0753b0465b1f8fdb41f8c
+Author: Kilpikonna02 <eetu.kilpi@outlook.com>
+Date:   Mon Mar 13 17:59:14 2023 +0200
+
+    toinen.txt poistettu
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 97344b4fb08cd2d214576d81270237cc3e73a5ea
+Author: Kilpikonna02 <eetu.kilpi@outlook.com>
+Date:   Mon Mar 13 17:54:46 2023 +0200
+
+    muutos 2
+
+ tiedosto.txt | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+commit f15413179ab4c625a64ee6de8326ae36616816d9
+Author: Kilpikonna02 <eetu.kilpi@outlook.com>
+Date:   Mon Mar 13 17:52:15 2023 +0200
+
+    muutos
+
+ tiedosto.txt | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+commit 7d9839eb28c82b2800099efda1ab0bc7dd4d315b
+Author: Kilpikonna02 <eetu.kilpi@outlook.com>
+Date:   Mon Mar 13 17:43:50 2023 +0200
+
+    uusi kansio
+
+ stuff/jokin | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 7d253238c3d8346d6ecc94e5cd1175cde44fcce6
+Author: Kilpikonna02 <eetu.kilpi@outlook.com>
+Date:   Mon Mar 13 17:40:39 2023 +0200
+
+    muutokset
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 975dfd3d0b83aba70e6c642ad2fa382c01ba1313
+Author: Kilpikonna02 <eetu.kilpi@outlook.com>
+Date:   Mon Mar 13 17:38:51 2023 +0200
+
+    kolmas.txt luotu
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit d27f3e38d444b267de964d5544dcc0995d150891
+Author: Kilpikonna02 <eetu.kilpi@outlook.com>
+Date:   Mon Mar 13 17:35:02 2023 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit a081cb910d0877a280855691fa144e46a6ca4e21
+Author: Kilpikonna02 <eetu.kilpi@outlook.com>
+Date:   Mon Mar 13 17:31:51 2023 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
