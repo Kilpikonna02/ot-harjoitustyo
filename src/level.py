@@ -36,17 +36,37 @@ class Level:
                     self.snake = Snake(normalized_x, normalized_y)
                     self.floor1.add(Floor1(normalized_x, normalized_y))
 
-        self.all_sprites.add(
-            self.floor1,
-            self.wall,
-            self.floor2,
-            self.snake
-        )    
+        if self.snake == None:
+            self.all_sprites.add(
+                self.floor1,
+                self.wall,
+                self.floor2
+            )
+        else:
+            self.all_sprites.add(
+                self.floor1,
+                self.wall,
+                self.floor2,
+                self.snake
+            )
+
+
+    def message(self,display,message,x,y):
+        font = pygame.font.SysFont("arial",120)
+        msg = font.render(message, True, (255,0,0))
+        display.blit(msg, [x,y])
 
     def move_snake(self,dx=0,dy=0):
         if not self._snake_can_move(dx,dy):
+            display_height = self.height*self.cell_size
+            display_widht = self.width*self.cell_size
+            display = pygame.display.set_mode((display_widht,display_height))
+            pygame.display.update()
+            self.message(display,"GAME",250,330)
+            self.message(display,"OVER",250,430)
+            pygame.display.update()
             print("GAME OVER")
-            time.sleep(2)
+            time.sleep(3)
             return pygame.quit()
         self.snake.rect.move_ip(dx,dy)
 

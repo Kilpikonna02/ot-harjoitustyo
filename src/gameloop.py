@@ -1,5 +1,4 @@
 import pygame
-import time
 
 class GameLoop:
     def __init__(self, level, renderer, event_queue, clock, cell_size):
@@ -39,6 +38,7 @@ class GameLoop:
                     self.snake_speed_y = self.speed
             elif event.type == pygame.QUIT:
                 return False
+
         self._level.move_snake(dx=self.snake_speed_x)
         self._level.move_snake(dy=self.snake_speed_y)
         
