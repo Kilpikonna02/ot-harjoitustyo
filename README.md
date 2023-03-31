@@ -2,11 +2,11 @@
 
 ## Dokumentaatio
 
-[Määrittelydokumentti](https://github.com/Kilpikonna02/ot-harjoitustyo/blob/8acf0b91d5ba137af7839202f173bc5703338120/dokumentaatio/vaatimusmaarittely.md)
+[Määrittelydokumentti](./dokumentaatio/vaatimusmaarittely.md)
 
-[Työnaikakirjanpito](https://github.com/Kilpikonna02/ot-harjoitustyo/blob/8acf0b91d5ba137af7839202f173bc5703338120/dokumentaatio/tuntikirjanpito.md)
+[Työnaikakirjanpito](./dokumentaatio/tuntikirjanpito.md)
 
-[Changelog](https://github.com/Kilpikonna02/ot-harjoitustyo/blob/5deb7a96838cd536098b7c12cf7bf1d29d7c2a94/dokumentaatio/changelog.md)
+[Changelog](./dokumentaatio/changelog.md)
 
 ## Komentorivin komennot
 
