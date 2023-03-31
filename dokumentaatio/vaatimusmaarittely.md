@@ -5,11 +5,11 @@ Sovelluksen on tarkoitus toimia perus matopelin tapaan, eli keräät madolla pis
 Tavoitteena on siis saada kerättyä mahdollisimman suuri pistemäärä.
 
 ## Suunnittelut toiminnallisuudesta
-- Käyttäjä pystyy vaihtamaan madon kulkusuuntaa
-- Mato kasvaa pituutta pisteiden kertyessä
-- Käyttäjä pystyy lopettamaan pelin törmäämällä madolla johonkin esteeseen tai matoon
+- [x] Käyttäjä pystyy vaihtamaan madon kulkusuuntaa
+- [x] Mato kasvaa pituutta pisteiden kertyessä
+- [x] Käyttäjä pystyy lopettamaan pelin törmäämällä madolla johonkin esteeseen tai matoon
 
 ## Mahdollisia lisätoiminnallisuuksia
-- Madon väriä pystyy vaihtamaan
-- Piste-ennätykset otetaan talteen
-- Eri tasoja missä madolle on lisää esteitä
+- [x] Start ja Game Over näytöt
+- [ ] Madon väriä pystyy vaihtamaan
+- [ ] Piste-ennätykset otetaan talteen
