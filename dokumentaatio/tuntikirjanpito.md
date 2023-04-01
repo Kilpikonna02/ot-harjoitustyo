@@ -8,3 +8,4 @@
 |  |  | Changelog ja invoke lisätty |
 | 30.3 | 6 | Harjoityön teko |
 | 31.3 | 4 | Harjoityön teko |
+| 1.4 | 1 | Harjoityön teko |
