@@ -10,6 +10,12 @@
 
 ## Komentorivin komennot
 
+Kaikki komentorivin komennnot edellyttävät, että olet asentanut poetryn komennolla:
+
+```bash
+poetry install
+```
+
 ### Ohjelman suorittaminen
 
 Ohjelman pystyy suorittamaan komennolla:
