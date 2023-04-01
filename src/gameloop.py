@@ -63,7 +63,7 @@ class GameLoop:
         score = Score()
         death = Death()
 
-        while not game_close:
+        while True:
 
             while game_over == True:
                 game_end.game_over_screen(self._display,self.snakelenght-1)
@@ -71,9 +71,9 @@ class GameLoop:
 
                 for event in pygame.event.get():
                     if event.type == pygame.KEYUP:
-                        if event.key == pygame.K_q:
-                            game_close = True
-                            game_over = False
+                        if event.key == pygame.K_ESCAPE:
+                            pygame.quit()
+                            quit()
                         if event.key == pygame.K_r:
                             self.game_start = True
                             self.startgame()
@@ -93,7 +93,7 @@ class GameLoop:
                             self.snake_speed_x = 0
                             self.snake_speed_y = self.snake_body_size
                     elif event.type == pygame.QUIT:
-                        game_close = True
+                        break
             
             if death.check_death(self.snake_posx,self.snake_posy) == True:
                 game_over = True
@@ -124,8 +124,6 @@ class GameLoop:
                 self.snakelenght += 1
             
             self.clock.tick(self.tickspeed)
-        pygame.quit()
-        quit()
 
 
    

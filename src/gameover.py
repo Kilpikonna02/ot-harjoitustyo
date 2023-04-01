@@ -16,7 +16,7 @@ class Gameover:
         )
         self.game_over_text = font.render("GAME OVER", True, (255,0,0))
         self.restart = font2.render("Press R to Restart", True, (255,255,255))
-        self.quit = font2.render("Press Q to Quit", True, (255,255,255))
+        self.quit = font2.render("Press ESC to Exit", True, (255,255,255))
 
     
     def game_over_screen(self,display,score):
