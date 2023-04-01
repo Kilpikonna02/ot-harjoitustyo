@@ -4,12 +4,11 @@ import os
 dirname = os.path.dirname(__file__)
 
 class Score:
-    def __init__(self, display):
-        self._display = display
+    def __init__(self):
         self.font = pygame.font.Font(
             (os.path.join(dirname, "fonts", "Retro Gaming.ttf")), 30
         )
     
-    def draw_scrore(self,score):
+    def draw_scrore(self,display,score):
         points = self.font.render("Score: "+str(score), True, (255,255,255))
-        self._display.blit(points,(10,0))
+        display.blit(points,(10,0))

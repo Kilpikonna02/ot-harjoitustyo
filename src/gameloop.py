@@ -3,6 +3,7 @@ from gameover import Gameover
 from start import Start
 from wall import Wall
 from score import Score
+from death import Death
 from random import randint
 
 
@@ -24,8 +25,8 @@ class GameLoop:
     
     def startgame(self):
         while self.game_start == True:
-            start = Start(self._display)
-            start.start_screen()
+            start = Start()
+            start.start_screen(self._display)
             pygame.display.update()
 
             for event in pygame.event.get():
@@ -51,21 +52,22 @@ class GameLoop:
 
         size = self._display_width/15
 
-        self.pointx = round(randint(size,self._display_width-size-self.snake_body_size)/20)*20
-        self.pointy = round(randint(size,self._display_height-size-self.snake_body_size)/20)*20
+        self.pointx = round(randint((size/20),(self._display_width/20)-(size/20)-(self.snake_body_size/20)))*20
+        self.pointy = round(randint((size/20),(self._display_height/20)-(size/20)-(self.snake_body_size/20)))*20
 
         self.snakesbody = []
         self.snakelenght = 1
 
-        game_end = Gameover(self._display)
+        game_end = Gameover()
         wall = Wall(self._display,size)
-        score = Score(self._display)
+        score = Score()
+        death = Death()
 
         while not game_close:
 
             while game_over == True:
-                game_end.game_over_screen(self.snakelenght-1)
-                pygame.display.update()
+                game_end.game_over_screen(self._display,self.snakelenght-1)
+                
 
                 for event in pygame.event.get():
                     if event.type == pygame.KEYUP:
@@ -93,8 +95,9 @@ class GameLoop:
                     elif event.type == pygame.QUIT:
                         game_close = True
             
-            if self.snake_posx >= self._display_width-size or self.snake_posy >= self._display_height-size or self.snake_posx < size or self.snake_posy < size:
+            if death.check_death(self.snake_posx,self.snake_posy) == True:
                 game_over = True
+
             
             self.snake_posx += self.snake_speed_x
             self.snake_posy += self.snake_speed_y
@@ -111,13 +114,13 @@ class GameLoop:
                     game_over = True
             self.snakes(self.snake_body_size,self.snakesbody)
             wall.draw()
-            score.draw_scrore(self.snakelenght-1)
+            score.draw_scrore(self._display,self.snakelenght-1)
 
             pygame.display.update()
 
             if self.snake_posx == self.pointx and self.snake_posy == self.pointy:
-                self.pointx = round(randint(size,self._display_width-size-self.snake_body_size)/20)*20
-                self.pointy = round(randint(size,self._display_height-size-self.snake_body_size)/20)*20
+                self.pointx = round(randint((size/20),(self._display_width/20)-(size/20)-(self.snake_body_size/20)))*20
+                self.pointy = round(randint((size/20),(self._display_height/20)-(size/20)-(self.snake_body_size/20)))*20
                 self.snakelenght += 1
             
             self.clock.tick(self.tickspeed)
