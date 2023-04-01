@@ -4,6 +4,7 @@ from start import Start
 from wall import Wall
 from score import Score
 from death import Death
+from snake import Snake
 from random import randint
 
 
@@ -18,10 +19,6 @@ class GameLoop:
         self._display_height = y
         self.game_start = True
 
-    
-    def snakes(self, snakebody, list):
-        for i in list:
-            pygame.draw.rect(self._display,(0,0,0),[i[0],i[1],snakebody,snakebody])
     
     def startgame(self):
         while self.game_start == True:
@@ -42,7 +39,6 @@ class GameLoop:
     def game(self):
 
         game_over = False
-        game_close = False
 
         self.snake_posx = (self._display_width/2)
         self.snake_posy = (self._display_height/2)
@@ -62,6 +58,7 @@ class GameLoop:
         wall = Wall(self._display,size)
         score = Score()
         death = Death()
+        snake = Snake()
 
         while True:
 
@@ -112,7 +109,7 @@ class GameLoop:
             for i in self.snakesbody[:-1]:
                 if i == snake_head:
                     game_over = True
-            self.snakes(self.snake_body_size,self.snakesbody)
+            snake.draw_snake(self._display,(0,0,0),self.snake_body_size,self.snakesbody)
             wall.draw()
             score.draw_scrore(self._display,self.snakelenght-1)
 
