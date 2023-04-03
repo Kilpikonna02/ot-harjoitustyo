@@ -4,7 +4,6 @@ class Wall:
     def __init__(self,display,size):
         self._display = display
         self.size = size
-        self._display_width,self._display_height = self._display.get_size()
 
     def draw(self):
         for i in range(15):

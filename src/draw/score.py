@@ -6,7 +6,7 @@ dirname = os.path.dirname(__file__)
 class Score:
     def __init__(self):
         self.font = pygame.font.Font(
-            (os.path.join(dirname, "fonts", "Retro Gaming.ttf")), 30
+            (os.path.join(dirname,".." ,"fonts", "Retro Gaming.ttf")), 30
         )
 
     def draw_scrore(self,display,score):

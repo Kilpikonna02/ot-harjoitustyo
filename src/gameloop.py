@@ -1,12 +1,13 @@
 import sys
 import pygame
-from gameover import Gameover
-from start import Start
-from wall import Wall
-from score import Score
 from death import Death
-from snake import Snake
-from point import Point
+from draw.gameover import Gameover
+from draw.start import Start
+from draw.wall import Wall
+from draw.score import Score
+from draw.snake import Snake
+from draw.point import Point
+from draw.floor import Floor
 
 class GameLoop:
     def __init__(self, display):
@@ -27,6 +28,7 @@ class GameLoop:
         self.death = Death()
         self.snake = Snake()
         self.point = Point(self._display)
+        self.floor = Floor(self._display)
 
     def startgame(self):
         while self.game_start is True:
@@ -97,7 +99,7 @@ class GameLoop:
 
             self.snake_posx += self.snake_speed_x
             self.snake_posy += self.snake_speed_y
-            self._display.fill((150,255,110))
+            self.floor.draw()
             self.point.draw_point()
             snake_body_list = []
             snake_body_list.append(self.snake_posx)

@@ -8,13 +8,13 @@ class Gameover:
         self._display = display
         self._display_width,self._display_height = display.get_size()
         font = pygame.font.Font(
-            (os.path.join(dirname, "fonts", "upheavtt.ttf")), 90
+            (os.path.join(dirname,".." ,"fonts", "upheavtt.ttf")), 90
         )
         font2 = pygame.font.Font(
-            (os.path.join(dirname, "fonts", "Retro Gaming.ttf")), 30
+            (os.path.join(dirname,".." ,"fonts", "Retro Gaming.ttf")), 30
         )
         self.font3 = pygame.font.Font(
-            (os.path.join(dirname, "fonts", "Retro Gaming.ttf")), 40
+            (os.path.join(dirname,".." ,"fonts", "Retro Gaming.ttf")), 40
         )
         self.g_o = font.render("GAME OVER", True, (255,0,0))
         self.res = font2.render("Press R to Restart", True, (255,255,255))
