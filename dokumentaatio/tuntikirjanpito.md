@@ -6,8 +6,8 @@
 |  |  | Työnaikakirjanpidon teko |
 | 29.3 | 6 | Harjoitustyön aloitus |
 |  |  | Changelog ja invoke lisätty |
-| 30.3 | 6 | Harjoityön teko |
-| 31.3 | 4 | Harjoityön teko |
-| 1.4 | 1 | Harjoityön teko |
-| 3.4 | 2 | Pylint lisätty ja koodi muutettu sitä vastaavaksi |
+| 30.3 | 6 | Harjoitustyön teko |
+| 31.3 | 4 | Harjoitustyön teko |
+| 1.4 | 1 | Harjoitustyön teko |
+| 3.4 | 2 | Pylint lisätty ja koodia muutettu sitä vastaavaksi |
 |  | 3 | Harjoitustyön teko |
