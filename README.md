@@ -8,6 +8,8 @@
 
 [Changelog](./dokumentaatio/changelog.md)
 
+[Arkkitehtuurikuvaus](./dokumentaatio/arkkitehtuuri.md)
+
 ## Komentorivin komennot
 
 Kaikki komentorivin komennnot edellyttävät, että olet asentanut poetryn komennolla:
