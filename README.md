@@ -39,3 +39,11 @@ Testikattavuusraportin voi generoida komennolla:
 ```bash
 poetry run invoke coverage-report
 ```
+
+## Koodin laadun tarkastus
+
+Koodin laadun tarkastuksen voi tehdä komennolla:
+
+```bash
+poetry run invoke lint
+```
