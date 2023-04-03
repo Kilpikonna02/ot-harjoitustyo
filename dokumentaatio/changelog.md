@@ -8,3 +8,5 @@
 
 ## Viikko 4
 - Koodinlaatua muutettu
+- Madon väriä pystyy nyt vaihtamaan 3 eri päävärin ja mustan välillä
+- Lisätty graafisia elementtejä
