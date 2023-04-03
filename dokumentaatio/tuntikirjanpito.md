@@ -10,3 +10,4 @@
 | 31.3 | 4 | Harjoityön teko |
 | 1.4 | 1 | Harjoityön teko |
 | 3.4 | 2 | Pylint lisätty ja koodi muutettu sitä vastaavaksi |
+|  | 3 | Harjoitustyön teko |
