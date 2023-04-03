@@ -1,9 +1,9 @@
 import pygame
 
 class Snake:
-    def __init__(self):
-        pass
+    def __init__(self,display):
+        self._display = display
 
-    def draw_snake(self,display, color, snakebody, s_list):
+    def draw_snake(self, color, snakebody, s_list):
         for i in s_list:
-            pygame.draw.rect(display,color,[i[0],i[1],snakebody,snakebody])
+            pygame.draw.rect(self._display,color,[i[0],i[1],snakebody,snakebody])

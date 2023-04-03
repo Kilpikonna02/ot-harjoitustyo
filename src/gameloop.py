@@ -1,11 +1,11 @@
 import sys
 import pygame
 from death import Death
+from draw.snake import Snake
 from draw.gameover import Gameover
 from draw.start import Start
 from draw.wall import Wall
 from draw.score import Score
-from draw.snake import Snake
 from draw.point import Point
 from draw.floor import Floor
 
@@ -26,18 +26,24 @@ class GameLoop:
         self.wall = Wall(self._display,40)
         self.score = Score()
         self.death = Death()
-        self.snake = Snake()
+        self.snake = Snake(self._display)
         self.point = Point(self._display)
         self.floor = Floor(self._display)
+        self.color = 0
 
     def startgame(self):
         while self.game_start is True:
             start = Start(self._display)
-            start.start_screen()
+            start.start_screen(self.color)
             pygame.display.update()
 
             for event in pygame.event.get():
                 if event.type == pygame.KEYUP:
+                    if event.key == pygame.K_c:
+                        self.color += 1
+                        if self.color >= 4:
+                            self.color = 0
+                        start.start_screen(self.color)
                     if event.key == pygame.K_SPACE:
                         self.game()
                         self.game_start = False
@@ -109,7 +115,14 @@ class GameLoop:
                 del self.snakesbody[0]
             if snake_body_list in self.snakesbody[:-1]:
                 game_over = True
-            self.snake.draw_snake(self._display,(0,0,0),20,self.snakesbody)
+            if self.color == 0:
+                self.snake.draw_snake((0,0,0),20,self.snakesbody)
+            if self.color == 1:
+                self.snake.draw_snake((0,18,255),20,self.snakesbody)
+            if self.color == 2:
+                self.snake.draw_snake((255,25,0),20,self.snakesbody)
+            if self.color == 3:
+                self.snake.draw_snake((255,237,0),20,self.snakesbody)
             self.wall.draw()
             self.score.draw_scrore(self._display,self.points)
 
