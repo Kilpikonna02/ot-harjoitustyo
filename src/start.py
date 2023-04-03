@@ -1,25 +1,23 @@
-import pygame
 import os
+import pygame
 
 dirname = os.path.dirname(__file__)
 
 class Start:
-    def __init__(self):
-        font = pygame.font.Font(
+    def __init__(self,display):
+        self.display = display
+        self.font = pygame.font.Font(
             (os.path.join(dirname, "fonts", "04B_30__.TTF")), 80
         )
-        font2 = pygame.font.Font(
+        self.font2 = pygame.font.Font(
             (os.path.join(dirname, "fonts", "Retro Gaming.ttf")), 30
         )
-        self.title = font.render("SNAKE", True, (0,255,0))
-        self.start = font2.render("Press SPACE to Start", True, (255,255,255))
-        self.exit = font2.render("Press ESC to Exit", True, (255,255,255))
+        self.title = self.font.render("SNAKE", True, (0,255,0))
+        self.start = self.font2.render("Press SPACE to Start", True, (255,255,255))
+        self.exit = self.font2.render("Press ESC to Exit", True, (255,255,255))
 
-    def start_screen(self,display):
-        x,y = display.get_size()
-        self._display_width = x
-        self._display_height = y
-        display.fill((0,0,0))
-        display.blit(self.title,(self._display_width/2-self.title.get_width()/2, self._display_height/3-self.title.get_height()/3-20))
-        display.blit(self.start,(self._display_width/2-self.start.get_width()/2, self._display_height/2-10+self.exit.get_height()/2))
-        display.blit(self.exit,(self._display_width/2-self.exit.get_width()/2, self._display_height/1.9+self.start.get_height()/2+20))
+    def start_screen(self):
+        self.display.fill((0,0,0))
+        self.display.blit(self.title,(300-self.title.get_width()/2, 180-self.title.get_height()/3))
+        self.display.blit(self.start,(300-self.start.get_width()/2, 290+self.exit.get_height()/2))
+        self.display.blit(self.exit,(300-self.exit.get_width()/2, 335+self.start.get_height()/2))

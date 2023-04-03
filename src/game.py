@@ -14,7 +14,6 @@ def main():
 
 
     game_loop = GameLoop(display)
-    
     game_loop.startgame()
 
 

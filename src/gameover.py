@@ -1,10 +1,12 @@
-import pygame
 import os
+import pygame
 
 dirname = os.path.dirname(__file__)
 
 class Gameover:
-    def __init__(self):
+    def __init__(self, display):
+        self._display = display
+        self._display_width,self._display_height = display.get_size()
         font = pygame.font.Font(
             (os.path.join(dirname, "fonts", "upheavtt.ttf")), 90
         )
@@ -14,24 +16,15 @@ class Gameover:
         self.font3 = pygame.font.Font(
             (os.path.join(dirname, "fonts", "Retro Gaming.ttf")), 40
         )
-        self.game_over_text = font.render("GAME OVER", True, (255,0,0))
-        self.restart = font2.render("Press R to Restart", True, (255,255,255))
+        self.g_o = font.render("GAME OVER", True, (255,0,0))
+        self.res = font2.render("Press R to Restart", True, (255,255,255))
         self.exit = font2.render("Press ESC to Exit", True, (255,255,255))
 
-    
-    def game_over_screen(self,display,score):
-        x,y = display.get_size()
-        self._display_width = x
-        self._display_height = y
-        self.game_over = True
+    def game_over_screen(self,score):
         endscore = self.font3.render("Score: "+str(score), True, (255,255,255))
-        display.fill((0,0,0))
-        display.blit(self.game_over_text,(self._display_width/2-self.game_over_text.get_width()/2, self._display_height/3-self.game_over_text.get_height()/3-20))
-        display.blit(self.restart,(self._display_width/2-self.restart.get_width()/2, self._display_height/2-10+self.exit.get_height()/2))
-        display.blit(self.exit,(self._display_width/2-self.exit.get_width()/2, self._display_height/1.9+self.restart.get_height()/2+20))
-        display.blit(endscore,(self._display_width/2-endscore.get_width()/2, self._display_height/2.75+endscore.get_height()/2))
+        self._display.fill((0,0,0))
+        self._display.blit(self.g_o,(300-self.g_o.get_width()/2, 180-self.g_o.get_height()/3))
+        self._display.blit(self.res,(300-self.res.get_width()/2, 290+self.exit.get_height()/2))
+        self._display.blit(self.exit,(300-self.exit.get_width()/2, 335+self.res.get_height()/2))
+        self._display.blit(endscore,(300-endscore.get_width()/2, 218+endscore.get_height()/2))
         pygame.display.update()
-    
-
-
-    
