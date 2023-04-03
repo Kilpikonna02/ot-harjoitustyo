@@ -11,5 +11,5 @@ Tavoitteena on siis saada kerättyä mahdollisimman suuri pistemäärä.
 
 ## Mahdollisia lisätoiminnallisuuksia
 - [x] Start ja Game Over näytöt
-- [ ] Madon väriä pystyy vaihtamaan
+- [x] Madon väriä pystyy vaihtamaan
 - [ ] Piste-ennätykset otetaan talteen
