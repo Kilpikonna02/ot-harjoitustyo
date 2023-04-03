@@ -6,3 +6,5 @@
  - Lisätty aloitus ja lopetus menut
  - Fontit muunnettu
 
+## Viikko 4
+- Koodinlaatua muutettu
