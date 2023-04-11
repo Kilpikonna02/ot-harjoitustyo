@@ -10,3 +10,6 @@
 - Koodinlaatua muutettu
 - Madon väriä pystyy nyt vaihtamaan 3 eri päävärin ja mustan välillä
 - Lisätty graafisia elementtejä
+
+## Viikko 5
+- Ensimmäinen julkaisu
