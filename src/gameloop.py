@@ -10,7 +10,38 @@ from draw.point import Point
 from draw.floor import Floor
 
 class GameLoop:
+    """Luokka, joka pyörittää koko peliä.
+
+    Attributes:
+        display: Näyttö, jolle piirretään.
+        clock: Sen avulla määritetään näytön päivitys nopeus.
+        display_width, display_height: Kertovat näytön leveyden ja korkeuden
+        game_start: Kertoo pelin alkunäytön tilan.
+        snake_lenght: Kertoo madon pituuden.
+        snakebody: Lista, joka ottaa talteen madon kulkeman reitin koordinaatteja.
+        points: Kertoo kerättyjen pisteiden määrän.
+        snake_speed_x, snake_speed_y: Kertovat madon liikesuunnan.
+        snake_posx, snake_posy: Kertovat madon sijainnin.
+        game_end: Luokan Gameover määrittely.
+        wall: Luokan Wall määrittely.
+        score: Luokan Score määrittely.
+        death: Luokan Death määrittely.
+        snake: Luokan Snake määrittely.
+        point: Luokan Point määrittely.
+        floor: Luokan Floor määrittely.
+        start: Luokan Start määrittely.
+        color: Kertoo madon värin.
+        file: Tiedosto jossa säilytetään ennätyspiste määrää.
+        high_score: Kertoo ennätyspisteiden määrän.
+        game_over: Kertoo pelin lopetus näytön tilan.
+
+    """
     def __init__(self, display):
+        """Luoka konstruktori, joka määrittelee kaikki pelin alku arvot.
+
+        Args:
+            display: Näyttö, jolle piirretään.
+        """
         self._display = display
         self.clock = pygame.time.Clock()
         self._display_width,self._display_height = self._display.get_size()
@@ -30,8 +61,12 @@ class GameLoop:
         self.point = Point(self._display)
         self.floor = Floor(self._display)
         self.color = 0
+        file = open("highscore.txt","r+")
+        self.high_score = file.read()
 
     def startgame(self):
+        """Piirtää pelin aloitus menun kun peli käynnistyy ja muuttaa pelin tilaa pelaajan riippuen mitä näppäimiä pelaaja painaa.
+        """
         while self.game_start is True:
             start = Start(self._display)
             start.start_screen(self.color)
@@ -53,6 +88,8 @@ class GameLoop:
 
 
     def game(self):
+        """Käytössä kun peli on käynnissä tai kun pelaaja häviää pelin. Liikuttaa matoa ja käyttää suurinta osaa muista luokista.
+        """
 
         game_over = False
 
@@ -72,7 +109,12 @@ class GameLoop:
         while True:
 
             while game_over is True:
-                self.game_end.game_over_screen(self.points)
+                if int(self.high_score) < int(self.points):
+                    file = open("highscore.txt","w")
+                    file.write(str(self.points))
+                file = open("highscore.txt","r+")
+                self.high_score = file.read()
+                self.game_end.game_over_screen(self.points,self.high_score)
 
                 for event in pygame.event.get():
                     if event.type == pygame.KEYUP:
@@ -125,6 +167,10 @@ class GameLoop:
                 self.snake.draw_snake((255,237,0),20,self.snakesbody)
             self.wall.draw()
             self.score.draw_scrore(self._display,self.points)
+            if int(self.high_score) < int(self.points):
+                self.score.draw_hs(self._display,self.points)
+            else:
+                self.score.draw_hs(self._display,self.high_score)
 
             pygame.display.update()
 

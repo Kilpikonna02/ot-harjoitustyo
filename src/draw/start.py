@@ -4,7 +4,21 @@ import pygame
 dirname = os.path.dirname(__file__)
 
 class Start:
+    """Luokka, joka piirtää aloitus näytön.
+
+    Attributes:
+        display: Näyttö, jolle piirretään.
+        font1, font2: Eri fontit teksteille.
+        title, start, exit, color: Kertovat mitä kirjoitetaan.
+        _snake päätteiset: Vaihtavat eri aloitus kuvan riippuen madon väristä.
+    """
+
     def __init__(self,display):
+        """Luokkan konstruktori, joka luo uuden aloitus näytön.
+
+        Args:
+            display: Näyttö, jolle piirretään.
+        """
         self.display = display
         self.font = pygame.font.Font(
             (os.path.join(dirname,".." ,"fonts", "04B_30__.TTF")), 80
@@ -30,6 +44,11 @@ class Start:
         )
 
     def start_screen(self,color):
+        """Piirtää uuden aloitus näytön.
+
+        Args:
+            color: Määrittää minkä värisellä madolla peliä pelataan.
+        """
         if color == 0:
             self.display.blit(self.black_snake,(0,0))
         if color == 1:
