@@ -13,3 +13,7 @@
 
 ## Viikko 5
 - Ensimmäinen julkaisu
+
+## Viikko 6
+- High Score systeemi lisätty
+- Docstringit lisätty
