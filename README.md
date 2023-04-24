@@ -10,6 +10,8 @@
 
 [Arkkitehtuurikuvaus](./dokumentaatio/arkkitehtuuri.md)
 
+[Käyttöohje](./dokumentaatio/kayttoohje.md)
+
 ## Komentorivin komennot
 
 Kaikki komentorivin komennnot edellyttävät, että olet asentanut poetryn komennolla:
