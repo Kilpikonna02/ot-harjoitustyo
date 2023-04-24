@@ -61,7 +61,7 @@ class GameLoop:
         self.point = Point(self._display)
         self.floor = Floor(self._display)
         self.color = 0
-        file = open("highscore.txt","r+")
+        file = open("./src/highscore.txt","r+")
         self.high_score = file.read()
 
     def startgame(self):
@@ -110,9 +110,9 @@ class GameLoop:
 
             while game_over is True:
                 if int(self.high_score) < int(self.points):
-                    file = open("highscore.txt","w")
+                    file = open("./src/highscore.txt","w")
                     file.write(str(self.points))
-                file = open("highscore.txt","r+")
+                file = open("./src/highscore.txt","r+")
                 self.high_score = file.read()
                 self.game_end.game_over_screen(self.points,self.high_score)
 
