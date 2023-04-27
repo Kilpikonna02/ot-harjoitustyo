@@ -1,5 +1,7 @@
 # OT Harjoitus työ 🐍
 
+Perinteinen matopeli
+
 ## Dokumentaatio
 
 [Määrittelydokumentti](./dokumentaatio/vaatimusmaarittely.md)
