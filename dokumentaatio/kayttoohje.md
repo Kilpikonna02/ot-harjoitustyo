@@ -28,6 +28,10 @@ Madon väriä voi myös muoka painamalla __C__ näppäintä.
 
 Pelin sammutus taas onnistuu painamalla __ESC__ näppäintä.
 
+## Pelin ollessa käynnissä
+
+Kun peli on käynnissä pelaaja voi liikkuttaa matoa näppäimistön nuolinäppäimillä.
+
 ## Pelin loputtua
 
 Kun pelaaja häviää pelin joutuu hän lopetus näyttöön:
