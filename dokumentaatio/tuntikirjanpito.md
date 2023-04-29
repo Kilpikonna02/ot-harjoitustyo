@@ -12,3 +12,4 @@
 | 3.4 | 2 | Pylint lisätty ja koodia muutettu sitä vastaavaksi |
 |  | 3 | Harjoitustyön teko |
 | 24.4 | 4 | Harjoitustyön teko ja docstring lisätty|
+| 29.4 | 1 | Harjoitustyön teko |
