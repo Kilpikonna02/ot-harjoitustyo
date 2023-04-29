@@ -2,7 +2,7 @@ import sys
 import pygame
 from death import Death
 from draw.snake import Snake
-from draw.gameover import Gameover
+from draw.gameover import GameOver
 from draw.start import Start
 from draw.wall import Wall
 from draw.score import Score
@@ -34,6 +34,7 @@ class GameLoop:
         file: Tiedosto jossa säilytetään ennätyspiste määrää.
         high_score: Kertoo ennätyspisteiden määrän.
         game_over: Kertoo pelin lopetus näytön tilan.
+        speed: Kertoo madon kulkunopeuden.
 
     """
     def __init__(self, display):
@@ -46,14 +47,14 @@ class GameLoop:
         self.clock = pygame.time.Clock()
         self._display_width,self._display_height = self._display.get_size()
         self.game_start = True
-        self.snakelenght = 1
-        self.snakesbody = []
+        self.snake_lenght = 1
+        self.snakes_body = []
         self.points = 0
         self.snake_speed_x = 0
         self.snake_speed_y = 0
         self.snake_posx = self._display_width/2
         self.snake_posy = self._display_height/2
-        self.game_end = Gameover(self._display)
+        self.game_end = GameOver(self._display)
         self.wall = Wall(self._display,40)
         self.score = Score()
         self.death = Death()
@@ -61,8 +62,9 @@ class GameLoop:
         self.point = Point(self._display)
         self.floor = Floor(self._display)
         self.color = 0
-        file = open("./src/highscore.txt","r+")
+        file = open("./src/high_score.txt","r+")
         self.high_score = file.read()
+        self.speed = 15
 
     def startgame(self):
         """Piirtää pelin aloitus menun kun peli käynnistyy ja muuttaa pelin tilaa pelaajan riippuen mitä näppäimiä pelaaja painaa.
@@ -103,16 +105,16 @@ class GameLoop:
 
         self.point.new_coordinates()
 
-        self.snakesbody = []
-        self.snakelenght = 1
+        self.snakes_body = []
+        self.snake_lenght = 1
 
         while True:
 
             while game_over is True:
                 if int(self.high_score) < int(self.points):
-                    file = open("./src/highscore.txt","w")
+                    file = open("./src/high_score.txt","w")
                     file.write(str(self.points))
-                file = open("./src/highscore.txt","r+")
+                file = open("./src/high_score.txt","r+")
                 self.high_score = file.read()
                 self.game_end.game_over_screen(self.points,self.high_score)
 
@@ -127,16 +129,16 @@ class GameLoop:
 
             for event in pygame.event.get():
                 if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_LEFT:
+                    if event.key == pygame.K_LEFT and self.snake_speed_x != 20:
                         self.snake_speed_x = -20
                         self.snake_speed_y = 0
-                    if event.key == pygame.K_RIGHT:
+                    if event.key == pygame.K_RIGHT and self.snake_speed_x != -20:
                         self.snake_speed_x = 20
                         self.snake_speed_y = 0
-                    if event.key == pygame.K_UP:
+                    if event.key == pygame.K_UP and self.snake_speed_y != 20:
                         self.snake_speed_x = 0
                         self.snake_speed_y = -20
-                    if event.key == pygame.K_DOWN:
+                    if event.key == pygame.K_DOWN and self.snake_speed_y != -20:
                         self.snake_speed_x = 0
                         self.snake_speed_y = 20
                 elif event.type == pygame.QUIT:
@@ -152,19 +154,19 @@ class GameLoop:
             snake_body_list = []
             snake_body_list.append(self.snake_posx)
             snake_body_list.append(self.snake_posy)
-            self.snakesbody.append(snake_body_list)
-            if len(self.snakesbody) > self.snakelenght:
-                del self.snakesbody[0]
-            if snake_body_list in self.snakesbody[:-1]:
+            self.snakes_body.append(snake_body_list)
+            if len(self.snakes_body) > self.snake_lenght:
+                del self.snakes_body[0]
+            if snake_body_list in self.snakes_body[:-1]:
                 game_over = True
             if self.color == 0:
-                self.snake.draw_snake((0,0,0),20,self.snakesbody)
+                self.snake.draw_snake((0,0,0),20,self.snakes_body)
             if self.color == 1:
-                self.snake.draw_snake((0,18,255),20,self.snakesbody)
+                self.snake.draw_snake((0,18,255),20,self.snakes_body)
             if self.color == 2:
-                self.snake.draw_snake((255,25,0),20,self.snakesbody)
+                self.snake.draw_snake((255,25,0),20,self.snakes_body)
             if self.color == 3:
-                self.snake.draw_snake((255,237,0),20,self.snakesbody)
+                self.snake.draw_snake((255,237,0),20,self.snakes_body)
             self.wall.draw()
             self.score.draw_scrore(self._display,self.points)
             if int(self.high_score) < int(self.points):
@@ -177,6 +179,8 @@ class GameLoop:
             if self.point.check(self.snake_posx,self.snake_posy) is True:
                 self.point.new_coordinates()
                 self.points += 1
-                self.snakelenght += 1
+                self.snake_lenght += 1
+                if self.speed < 20:
+                    self.speed += 0.2
 
-            self.clock.tick(20)
+            self.clock.tick(self.speed)

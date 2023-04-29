@@ -3,7 +3,7 @@ import pygame
 
 dirname = os.path.dirname(__file__)
 
-class Gameover:
+class GameOver:
     """Luokka, joka piirtää pelin lopetus näytön.
 
     Attributes:
