@@ -73,6 +73,7 @@ class GameLoop:
             start = Start(self._display)
             start.start_screen(self.color)
             pygame.display.update()
+            self.speed = 15
 
             for event in pygame.event.get():
                 if event.type == pygame.KEYUP:
