@@ -17,3 +17,6 @@
 ## Viikko 6
 - High Score systeemi lisätty
 - Docstringit lisätty
+- Muutoksia tehty palautteen perusteella:
+  - Mato ei voi enää vaihtaa liikkumis suuntaansa vastakkaiseen suuntaan nykyisestä suunnasta
+  - Madon alku liikkumis nopeuttta pienennetty, mutta se saa vähän lisää nopeuttaa kerättyään pisteitä ensimmäisten 25 pisteen aikana
