@@ -14,6 +14,8 @@ Perinteinen matopeli
 
 [Käyttöohje](./dokumentaatio/kayttoohje.md)
 
+[Testausdokumentti](./dokumentaatio/testaus.md)
+
 ## Komentorivin komennot
 
 Kaikki komentorivin komennnot edellyttävät, että olet asentanut poetryn komennolla:
