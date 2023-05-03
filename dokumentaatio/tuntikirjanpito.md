@@ -13,3 +13,4 @@
 |  | 3 | Harjoitustyön teko |
 | 24.4 | 4 | Harjoitustyön teko ja docstring lisätty|
 | 29.4 | 1 | Harjoitustyön teko |
+| 3.5 | 1 | Loppuviimeistelyt |
